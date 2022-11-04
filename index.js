@@ -1,6 +1,7 @@
 let width = 100;
 let height = 100;
 let pixelSize = -1;
+let disabled = false;
 
 // Generates a row
 function createRow() {
@@ -68,6 +69,8 @@ function changePixelSize(newSize) {
 
 // Changes style when pixel is moused over
 function onMouseOver(event) {
+	if (disabled)
+		return;
 	let pixel = event.currentTarget;
 	pixel.className = "pixel marked";
 }
