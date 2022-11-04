@@ -1,5 +1,6 @@
 let width = 100;
 let height = 100;
+let pixelSize = -1;
 
 // Generates a row
 function createRow() {
@@ -14,6 +15,12 @@ function createPixel(w, h) {
 	pixel.className = "pixel blank";
 	pixel.w = w;
 	pixel.h = h;
+
+	// Custom styling if needed
+	if (pixelSize > 0) {
+		pixel.style.minWidth = `${pixelSize}vw`;
+		pixel.style.mingHeight = `${pixelSize}vw`;
+	}
 
 	pixel.addEventListener('mouseover', onMouseOver);
 	return pixel;
@@ -48,9 +55,14 @@ function regenerateGrid() {
 
 // Change grid to one of different size
 function changeGridSize(newWidth = width, newHeight = height) {
-	// Update new values and regenerate grid
 	width = newWidth;
 	height = newHeight;
+	regenerateGrid();
+}
+
+// Change pixel to one of different size
+function changePixelSize(newSize) {
+	pixelSize = newSize;
 	regenerateGrid();
 }
 
