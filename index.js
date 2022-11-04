@@ -19,7 +19,7 @@ function createPixel(w, h) {
 	// Custom styling if needed
 	if (pixelSize > 0) {
 		pixel.style.minWidth = `${pixelSize}vw`;
-		pixel.style.mingHeight = `${pixelSize}vw`;
+		pixel.style.minHeight = `${pixelSize}vw`;
 	}
 
 	pixel.addEventListener('mouseover', onMouseOver);
