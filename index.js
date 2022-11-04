@@ -73,6 +73,9 @@ function onMouseOver(event) {
 }
 
 window.onload = () => {
+	let ratio = window.screen.width / window.screen.height;
+	width = Math.floor(100 * ratio);
+	height = Math.floor(100 / ratio);
 	regenerateGrid();
 }
 
