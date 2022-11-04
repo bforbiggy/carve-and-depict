@@ -4,8 +4,8 @@
 }
 
 .pixel {
-	width: 25px;
-	height: 25px;
+	width: 1vw;
+	height: 1vw;
 	border: 1px solid black;
 }
 

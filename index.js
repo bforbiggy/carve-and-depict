@@ -1,5 +1,5 @@
-const width = 50;
-const height = 50;
+const width = 100;
+const height = 100;
 
 // Generates a row
 function createRow() {
