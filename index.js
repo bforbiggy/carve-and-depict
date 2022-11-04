@@ -23,6 +23,7 @@ function createPixel(w, h) {
 function createGrid(width, height) {
 	let grid = document.createElement("grid");
 	grid.className = "grid";
+	grid.id = "grid";
 
 	for (let h = 0; h < height; h++) {
 		const row = createRow();
@@ -39,7 +40,16 @@ function onMouseOver(event) {
 	pixel.className = "pixel marked";
 }
 
-window.onload = () => {
+// Change grid to one of different size
+function changeGridSize(width, height) {
+	const oldGrid = document.getElementById("grid");
+	if (oldGrid != null)
+		document.body.removeChild(oldGrid);
+
 	const grid = createGrid(width, height);
 	document.body.appendChild(grid);
+}
+
+window.onload = () => {
+	changeGridSize(width, height);
 }
