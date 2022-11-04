@@ -1,5 +1,5 @@
-const width = 100;
-const height = 100;
+let width = 100;
+let height = 100;
 
 // Generates a row
 function createRow() {
@@ -19,6 +19,20 @@ function createPixel(w, h) {
 	return pixel;
 }
 
+// Generates a grid
+function createGrid(width, height) {
+	let grid = document.createElement("grid");
+	grid.className = "grid";
+
+	for (let h = 0; h < height; h++) {
+		const row = createRow();
+		for (let w = 0; w < width; w++)
+			row.appendChild(createPixel(w, h));
+		grid.appendChild(row);
+	}
+	return grid;
+}
+
 // Changes style when pixel is moused over
 function onMouseOver(event) {
 	let pixel = event.currentTarget;
@@ -26,13 +40,6 @@ function onMouseOver(event) {
 }
 
 window.onload = () => {
-	const grid = document.getElementById("grid");
-
-	// Create all pixels in grid
-	for (let h = 0; h < height; h++) {
-		const row = createRow();
-		for (let w = 0; w < width; w++)
-			row.appendChild(createPixel(w, h));
-		grid.appendChild(row);
-	}
+	const grid = createGrid(width, height);
+	document.body.appendChild(grid);
 }
