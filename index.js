@@ -10,7 +10,7 @@ window.onload = () => {
 
 		for (let h = 0; h < height; h++) {
 			let pixel = document.createElement("div");
-			pixel.className = "pixel";
+			pixel.className = "pixel blank";
 			row.appendChild(pixel);
 		}
 

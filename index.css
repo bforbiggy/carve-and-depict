@@ -8,3 +8,11 @@
 	height: 25px;
 	border: 1px solid black;
 }
+
+.blank {
+	background-color: white;
+}
+
+.marked {
+	background-color: black;
+}
