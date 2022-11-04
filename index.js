@@ -1,6 +1,3 @@
-let width = 100;
-let height = 100;
-
 // Generates a row
 function createRow() {
 	let row = document.createElement("div");
@@ -20,7 +17,7 @@ function createPixel(w, h) {
 }
 
 // Generates a grid
-function createGrid(width, height) {
+function createGrid(width = 100, height = 100) {
 	let grid = document.createElement("grid");
 	grid.className = "grid";
 	grid.id = "grid";
@@ -51,5 +48,5 @@ function changeGridSize(width, height) {
 }
 
 window.onload = () => {
-	changeGridSize(width, height);
+	changeGridSize();
 }
