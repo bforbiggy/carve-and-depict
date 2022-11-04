@@ -1,3 +1,6 @@
+let width = 100;
+let height = 100;
+
 // Generates a row
 function createRow() {
 	let row = document.createElement("div");
@@ -17,7 +20,7 @@ function createPixel(w, h) {
 }
 
 // Generates a grid
-function createGrid(width = 100, height = 100) {
+function createGrid() {
 	let grid = document.createElement("grid");
 	grid.className = "grid";
 	grid.id = "grid";
@@ -31,22 +34,33 @@ function createGrid(width = 100, height = 100) {
 	return grid;
 }
 
+// Regenerates grid
+function regenerateGrid() {
+	// Remove old grid
+	const oldGrid = document.getElementById("grid");
+	if (oldGrid != null)
+		document.body.removeChild(oldGrid);
+
+	// Create new grid
+	const grid = createGrid();
+	document.body.appendChild(grid);
+}
+
+// Change grid to one of different size
+function changeGridSize(newWidth = width, newHeight = height) {
+	// Update new values and regenerate grid
+	width = newWidth;
+	height = newHeight;
+	regenerateGrid();
+}
+
 // Changes style when pixel is moused over
 function onMouseOver(event) {
 	let pixel = event.currentTarget;
 	pixel.className = "pixel marked";
 }
 
-// Change grid to one of different size
-function changeGridSize(width, height) {
-	const oldGrid = document.getElementById("grid");
-	if (oldGrid != null)
-		document.body.removeChild(oldGrid);
-
-	const grid = createGrid(width, height);
-	document.body.appendChild(grid);
-}
-
 window.onload = () => {
-	changeGridSize();
+	regenerateGrid();
 }
+
