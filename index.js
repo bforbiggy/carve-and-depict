@@ -1,7 +1,14 @@
 let width;
 let height;
 let pixelSize = 15;
+
+// Disabling carve and depict
 let disabled = false;
+window.onkeydown = (key) => {
+	if (key.keycode == 80) {
+		disabled = !disabled;
+	}
+}
 
 // Generates a row
 function createRow() {
@@ -12,12 +19,14 @@ function createRow() {
 
 // Generates a pixel
 function createPixel(w, h) {
+	// Pixel data (class and position)
 	let pixel = document.createElement("div");
-	pixel.className = "pixel blank";
+	pixel.classList.add("pixel");
+	pixel.classList.add("blank");
 	pixel.w = w;
 	pixel.h = h;
 
-	// Custom styling
+	// Set pixel size
 	if (pixelSize > 0) {
 		pixel.style.minWidth = `${pixelSize}px`;
 		pixel.style.minHeight = `${pixelSize}px`;
@@ -80,4 +89,3 @@ window.onload = () => {
 	height = (window.innerHeight / pixelSize);
 	regenerateGrid();
 }
-
