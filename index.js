@@ -89,3 +89,17 @@ window.onload = () => {
 	height = (window.innerHeight / pixelSize);
 	regenerateGrid();
 }
+
+console.log(
+	`
+[Variables]
+width = Grid width in blocks
+height = Grid height in blocks
+disabled = Disables mouse drawing
+
+[Functions]
+changeGridSize(newWidth, newHeight) = Sets grid dimensions in blocks
+changePixelSize(size) = Changes block dimensions in pixels
+regenerateGrid() = Resets grid
+`
+)
