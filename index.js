@@ -1,6 +1,6 @@
-let width = 100;
-let height = 100;
-let pixelSize = -1;
+let width;
+let height;
+let pixelSize = 15;
 let disabled = false;
 
 // Generates a row
@@ -17,10 +17,10 @@ function createPixel(w, h) {
 	pixel.w = w;
 	pixel.h = h;
 
-	// Custom styling if needed
+	// Custom styling
 	if (pixelSize > 0) {
-		pixel.style.minWidth = `${pixelSize}vw`;
-		pixel.style.minHeight = `${pixelSize}vw`;
+		pixel.style.minWidth = `${pixelSize}px`;
+		pixel.style.minHeight = `${pixelSize}px`;
 	}
 
 	pixel.addEventListener('mouseover', onMouseOver);
@@ -76,9 +76,8 @@ function onMouseOver(event) {
 }
 
 window.onload = () => {
-	let ratio = window.screen.width / window.screen.height;
-	width = Math.floor(100 * ratio);
-	height = Math.floor(100 / ratio);
+	width = (window.innerWidth / pixelSize);
+	height = (window.innerHeight / pixelSize);
 	regenerateGrid();
 }
 

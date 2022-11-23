@@ -1,3 +1,8 @@
+.grid {
+	width: 100vw;
+	height: 100vh;
+}
+
 .row {
 	display: flex;
 	flex-direction: row;
@@ -5,6 +10,7 @@
 }
 
 .pixel {
+	box-sizing: border-box;
 	min-width: 1vw;
 	min-height: 1vw;
 	border: 1px solid black;
