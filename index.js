@@ -2,13 +2,13 @@ let width;
 let height;
 let pixelSize = 15;
 
-// Disabling carve and depict
+// Disabling carve and depict using P
 let disabled = false;
-window.onkeydown = (key) => {
-	if (key.keycode == 80) {
+window.addEventListener('keydown', (key) => {
+	if (key.keyCode == 80) {
 		disabled = !disabled;
 	}
-}
+})
 
 // Generates a row
 function createRow() {
