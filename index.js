@@ -72,7 +72,7 @@ function onMouseOver(event) {
 	if (disabled)
 		return;
 	let pixel = event.currentTarget;
-	pixel.className = "pixel marked";
+	pixel.classList.add("marked");
 }
 
 window.onload = () => {
